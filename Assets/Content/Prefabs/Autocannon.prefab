@@ -47,9 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  allParts: {fileID: 8541337685405728357}
+  bottomParts: {fileID: 8541337685405728357}
   topParts: {fileID: 3898106718760119064}
-  speed: 10
 --- !u!1 &3054297651990183240
 GameObject:
   m_ObjectHideFlags: 0

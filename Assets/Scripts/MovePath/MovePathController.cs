@@ -36,6 +36,7 @@ namespace MovePath
         {
             DestroyImmediate(_movePoints[index]);
             _movePoints.RemoveAt(index);
+            
             PrefabUtility.ApplyPrefabInstance(gameObject, InteractionMode.AutomatedAction);
         }
 
@@ -48,6 +49,8 @@ namespace MovePath
             }
             
             _movePoints[index].transform.position = newPosition;
+            
+            
             PrefabUtility.ApplyPrefabInstance(gameObject, InteractionMode.AutomatedAction);
         }
         

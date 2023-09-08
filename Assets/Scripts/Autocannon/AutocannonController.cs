@@ -5,10 +5,8 @@ namespace Autocannon
     public class AutocannonController : MonoBehaviour
     {
         [SerializeField] private Transform target;
-        [SerializeField] private Transform allParts;
+        [SerializeField] private Transform bottomParts;
         [SerializeField] private Transform topParts;
-
-        [SerializeField]private float speed;
 
         private bool _initialized;
 
@@ -30,7 +28,7 @@ namespace Autocannon
                 return true;
             }
             
-            if (!allParts)
+            if (!bottomParts)
             {
                 Debug.LogWarningFormat("[{0}][CheckingError]allParts is empty!", GetType().Name);
                 return true;
@@ -57,11 +55,11 @@ namespace Autocannon
 
         private void Rotation()
         {
-            allParts.LookAt(target);
-            var eulerAnglesAllParts = allParts.rotation.eulerAngles;
+            bottomParts.LookAt(target);
+            var eulerAnglesAllParts = bottomParts.rotation.eulerAngles;
             eulerAnglesAllParts.x = 0;
             eulerAnglesAllParts.z = 0;
-            allParts.rotation = Quaternion.Euler(eulerAnglesAllParts);
+            bottomParts.rotation = Quaternion.Euler(eulerAnglesAllParts);
             
             topParts.LookAt(target);
             var eulerAnglesTopParts = topParts.rotation.eulerAngles;

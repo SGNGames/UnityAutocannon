@@ -16,9 +16,14 @@ namespace FlyBall
         
         private void Start()
         {
+            Initialize();
+        }
+
+        private void Initialize()
+        {
             if (!movePathController || movePathController.MovePoints.Count == 0)
             {
-                Debug.LogWarningFormat("[{0}][Start]movePathController has a problem!", GetType().Name);
+                Debug.LogWarningFormat("[{0}][Initialize]movePathController has a problem!", GetType().Name);
                 return;
             }
 
